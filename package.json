@@ -1,0 +1,30 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CapriceLoren/restAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CapriceLoren/restAPI/issues"
+  },
+  "homepage": "https://github.com/CapriceLoren/restAPI#readme",
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.2.10"
+  },
+  "type": "module"
+}
