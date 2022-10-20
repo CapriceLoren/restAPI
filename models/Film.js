@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 let Film = new Schema({
-    "id": String,
     "title": String,
     "original_title": String,
     "description": String,

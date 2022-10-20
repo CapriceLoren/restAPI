@@ -1,65 +1,36 @@
 import Film from "../models/Film.js";
 
-export const getFilms = async (req, res) => {
-  try {
-    const films = await Film.find();
-    res.json(films);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: error.message });
+const controller = {
+  getFilms(req, res) {
+    Film.find({})
+    .then(films => {res.json(films)})
+  },
+
+  getId(req, res) {
+    Film.findById(req.params.id )
+      .then(films => { res.json(films) })
+  },
+
+  getTitle(req, res) {
+    Film.find({ title: req.params.title })
+    .then(films => {res.json(films)})
+  },
+
+  createFilms(req, res) {
+    Film.create(req.body)
+    .then(films => {res.json(films)})
+  },
+
+  editFilms(req, res) {
+    Film.findByIdAndUpdate(req.params.id, req.body,
+    { new: true })
+    .then(films => { res.json(films) })
+  },
+
+  deleteFilms(req, res) {
+    Film.findByIdAndDelete(req.params.id)
+    .then(films => { res.json(films) })
   }
-};
+}
 
-// export const getCharacter = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const character = await Character.findById(id);
-
-//     if (character) {
-//       return res.json(character);
-//     }
-
-//     res.status(404).json({ message: "Character not found!" });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
-// export const createCharacter = async (req, res) => {
-//   try {
-//     const character = new Character(req.body);
-//     await character.save();
-//     res.status(201).json(character);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
-// export const updateCharacter = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const character = await Character.findByIdAndUpdate(id, req.body);
-//     res.status(201).json(character);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
-// export const deleteCharacter = async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const deleted = await Character.findByIdAndDelete(id);
-
-//     if (deleted) {
-//       return res.status(200).send("Character deleted!");
-//     }
-
-//     throw new Error("Character not found");
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: error.message });
-//   }
-// };
+export default controller
