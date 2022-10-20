@@ -9,7 +9,6 @@ router.use(parser.json())
 router.get("/", controllers.getFilms);
 router.get("/id/:id", controllers.getId);
 router.get("/title/:title", controllers.getTitle);
-// %20 between spaces in url
 router.post("/", controllers.createFilms);
 router.put("/id/:id", controllers.editFilms);
 router.delete("/id/:id", controllers.deleteFilms);

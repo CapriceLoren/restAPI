@@ -6,11 +6,7 @@ let Film = new Schema({
     "original_title": String,
     "description": String,
     "director": String,
-    "release_date": Number,
-    "people": [],
-    "species": [],
-    "locations": [],
-    "vehicles": [],
+    "release_date": Number
 });
 
 export default mongoose.model("films", Film);
