@@ -6,9 +6,9 @@
 ## Get
 
 - base api url: 
-  - /films/
+  - https://restapi-production-9aa5.up.railway.app/
 - how to access endpoints:
-  - to get films: 
+  - to get all films: 
     - /films/
   - to get by title: 
     - /films/title/${title}
@@ -38,8 +38,8 @@
 - send delete request to endpoint "/films/id"
 ---
 
-- [ ] Deploy
-- [ ] finish paths with actual URL
+- [x] Deploy
+- [x] finish paths with actual URL
 
 ---
 ##### Made with Mongoose, Express, and JavaScript
